@@ -26,8 +26,8 @@
       <h2 id="timeline-title" class="text-md font-medium text-gray-900">SQL Queries</h2>
 
       <p class="mt-3">
-        As is it an example project, some pieces of the page won't work. This example has the main propose to show how
-        we can create an page using components and create a simple and elegant layout.
+        Since it is an example project, some pieces of the page won't work. This example has the main propose to show
+        how we can create an page using components and create a simple and elegant layout.
       </p>
 
       <p class="mt-5">
