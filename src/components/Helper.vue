@@ -13,7 +13,7 @@
         and <span class="font-medium text-gray-900">TailwindCSS</span> for the styles.
       </p>
 
-      <p class="text-xs mt-5">Overall page load: <span class="font-medium text-green-500">0.5ms</span></p>
+      <p class="text-xs mt-5">Overall page load ( dev mode ): <span class="font-medium text-green-500">599 ms</span></p>
       <p class="text-xs mt-1">
         Project:
         <a href="https://github.com/guifischer/vue-sql-editor" target="__blank" class="font-medium text-blue-500"
@@ -49,19 +49,19 @@
       <div class="overflow-hidden rounded-md bg-light-blue-500 mt-5">
         <pre
           class="scrollbar-none overflow-x-auto text-xs text-white bg-black bg-opacity-75 p-2"
-        ><span>SELECT * FROM users</span></pre>
+        ><span>SELECT * FROM categories</span></pre>
       </div>
 
       <div class="overflow-hidden rounded-md bg-light-blue-500 mt-3">
         <pre
           class="scrollbar-none overflow-x-auto text-xs text-white bg-black bg-opacity-75 p-2"
-        ><span>SELECT * FROM users</span></pre>
+        ><span>SELECT * FROM orders</span></pre>
       </div>
 
       <div class="overflow-hidden rounded-md bg-light-blue-500 mt-3">
         <pre
           class="scrollbar-none overflow-x-auto text-xs text-white bg-black bg-opacity-75 p-2"
-        ><span>SELECT * FROM users</span></pre>
+        ><span>SELECT * FROM products</span></pre>
       </div>
     </div>
   </div>

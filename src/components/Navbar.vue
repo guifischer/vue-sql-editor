@@ -11,7 +11,11 @@
       </button>
     </div>
 
-    <button type="button" :class="[btnClass, 'font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700']">
+    <button
+      type="button"
+      :class="[btnClass, 'font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700']"
+      @click="$emit('run')"
+    >
       Run
     </button>
   </div>
@@ -23,7 +27,7 @@ import { MenuAlt2Icon, SaveIcon, ArchiveIcon, RefreshIcon } from "@heroicons/vue
 export default {
   name: "Navbar",
   components: { MenuAlt2Icon, SaveIcon, ArchiveIcon, RefreshIcon },
-  emits: ["openSidebar"],
+  emits: ["openSidebar", "run"],
   data() {
     return {
       menu: [
