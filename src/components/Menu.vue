@@ -25,26 +25,22 @@
               <DatabaseIcon :class="['mr-2 flex-shrink-0 h-5 w-5']" aria-hidden="true" />
               {{ item.name }}
             </div>
-            <div v-if="item.childrens" class="mt-4">
-              <div class="mb-3 ml-7 flex text-xs font-medium text-gray-400">Tables</div>
-              <div class="mt-2 ml-9 flex text-xs text-gray-500 hover:text-gray-400 cursor-pointer">
-                <TableIcon :class="['flex-shrink-0 h-4 w-4 mr-1']" aria-hidden="true" />
-                users
+            <div v-if="item.current" class="mt-4">
+              <div
+                class="mb-3 ml-7 text-xs font-medium text-gray-400"
+                v-for="submenu in item.submenus"
+                :key="submenu.name"
+              >
+                {{ submenu.name }}
+                <div
+                  class="mt-2 ml-3 flex text-xs text-gray-500 hover:text-gray-400 cursor-pointer"
+                  v-for="child in submenu.children"
+                  :key="child"
+                >
+                  <TableIcon :class="['flex-shrink-0 h-4 w-4 mr-1']" aria-hidden="true" />
+                  {{ child }}
+                </div>
               </div>
-              <div class="mt-2 ml-9 flex text-xs text-gray-500 hover:text-gray-400 cursor-pointer">
-                <TableIcon :class="['flex-shrink-0 h-4 w-4 mr-1']" aria-hidden="true" />companies
-              </div>
-              <div class="mt-2 ml-9 flex text-xs text-gray-500 hover:text-gray-400 cursor-pointer">
-                <TableIcon :class="['flex-shrink-0 h-4 w-4 mr-1']" aria-hidden="true" />tasks
-              </div>
-              <div class="mt-2 ml-9 flex text-xs text-gray-500 hover:text-gray-400 cursor-pointer">
-                <TableIcon :class="['flex-shrink-0 h-4 w-4 mr-1']" aria-hidden="true" />projects
-              </div>
-
-              <div class="mt-5 ml-7 flex text-xs font-medium text-gray-400">Schema</div>
-              <div class="mt-3 ml-7 flex text-xs font-medium text-gray-400">Queries</div>
-              <div class="mt-3 ml-7 flex text-xs font-medium text-gray-400">Backup</div>
-              <div class="mt-3 ml-7 flex text-xs font-medium text-gray-400">Configuration</div>
             </div>
           </div>
         </nav>

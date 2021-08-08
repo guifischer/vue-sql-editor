@@ -49,9 +49,34 @@ export default {
     return {
       sidebarOpen: false,
       navigation: [
-        { name: "Database 01", current: true, childrens: true },
-        { name: "Database 02", current: false, childrens: false },
-        { name: "Database 03", current: false, childrens: false },
+        {
+          name: "Database 01",
+          current: true,
+          submenus: [
+            {
+              name: "Tables",
+              children: [
+                "categories",
+                "customers",
+                "employee_territories",
+                "employees",
+                "order_details",
+                "orders",
+                "products",
+                "regions",
+                "shippers",
+                "suppliers",
+                "territories",
+              ],
+            },
+            { name: "Schema", children: [] },
+            { name: "Queries", children: [] },
+            { name: "Backup", children: [] },
+            { name: "Configuration", children: [] },
+          ],
+        },
+        { name: "Database 02", current: false, submenus: [] },
+        { name: "Database 03", current: false, submenus: [] },
       ],
     };
   },
