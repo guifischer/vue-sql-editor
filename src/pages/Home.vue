@@ -1,0 +1,59 @@
+<template>
+  <div class="h-screen flex overflow-hidden bg-gray-100">
+    <MobileMenu :navigation="navigation" :sidebarOpen="sidebarOpen" @closeSidebar="sidebarOpen = false" />
+    <div class="hidden md:flex md:flex-shrink-0">
+      <Menu :navigation="navigation" class="w-64" />
+    </div>
+
+    <div class="flex flex-col w-0 flex-1 overflow-hidden">
+      <Navbar @openSidebar="sidebarOpen = true" />
+
+      <div class="flex-1 relative z-0 flex overflow-hidden">
+        <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-first">
+          <div class="absolute inset-0 pl-5 pr-4">
+            <div class="h-2/5 py-5">
+              <Editor />
+            </div>
+            <div class="h-3/5 pb-5">
+              <TableQuery />
+            </div>
+          </div>
+        </main>
+        <aside class="hidden relative xl:order-last xl:flex xl:flex-col flex-shrink-0 w-96 border-r border-gray-200">
+          <Helper />
+        </aside>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import Helper from "../components/Helper.vue";
+import Navbar from "../components/Navbar.vue";
+import Menu from "../components/Menu.vue";
+import MobileMenu from "../components/MobileMenu.vue";
+import Editor from "../components/Editor.vue";
+import TableQuery from "../components/TableQuery.vue";
+
+export default {
+  name: "Home",
+  components: {
+    Helper,
+    Navbar,
+    Menu,
+    MobileMenu,
+    Editor,
+    TableQuery,
+  },
+  data() {
+    return {
+      sidebarOpen: false,
+      navigation: [
+        { name: "Database 01", current: true, childrens: true },
+        { name: "Database 02", current: false, childrens: false },
+        { name: "Database 03", current: false, childrens: false },
+      ],
+    };
+  },
+};
+</script>
